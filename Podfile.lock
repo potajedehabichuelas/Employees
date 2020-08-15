@@ -1,3 +1,26 @@
-PODFILE CHECKSUM: a634d89e8a9b069715d907cc5f67a5b7339d803c
+PODS:
+  - Alamofire (5.2.2)
+  - SVProgressHUD (2.2.5)
+  - SwiftMessages (8.0.0):
+    - SwiftMessages/App (= 8.0.0)
+  - SwiftMessages/App (8.0.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - SVProgressHUD (~> 2.2.5)
+  - SwiftMessages (~> 8.0.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - SVProgressHUD
+    - SwiftMessages
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftMessages: 29e7975b1173fd4e8357600c6518b5a59bc607d6
+
+PODFILE CHECKSUM: 3b8389100a31a6fe261a7da0629ab77258d13b7e
 
 COCOAPODS: 1.9.3
