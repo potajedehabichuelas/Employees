@@ -20,12 +20,7 @@ class EmployeesRouterTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    // Test Content Request succeeds - Server is reachable
+    // Test API is reachable
     func testEmployeesAPIReachable() {
 
         let ex = expectation(description: "Expecting a response from Employees API")
@@ -44,6 +39,7 @@ class EmployeesRouterTests: XCTestCase {
         }
     }
 
+    //Test that the API returns a valid result
     func testEmployeeAPI() {
 
         let ex = expectation(description: "Expecting a success return from the api")
@@ -51,7 +47,7 @@ class EmployeesRouterTests: XCTestCase {
         self.employeeService.getEmployees(completion: { response in
 
             switch response {
-                case .success(let employees):
+                case .success:
                     ex.fulfill()
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -65,7 +61,6 @@ class EmployeesRouterTests: XCTestCase {
             }
         }
     }
-
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

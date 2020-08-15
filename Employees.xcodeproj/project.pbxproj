@@ -14,7 +14,7 @@
 		488FCEE224E8112F003DEA31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488FCEE024E8112F003DEA31 /* Main.storyboard */; };
 		488FCEE424E81131003DEA31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488FCEE324E81131003DEA31 /* Assets.xcassets */; };
 		488FCEE724E81131003DEA31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488FCEE524E81131003DEA31 /* LaunchScreen.storyboard */; };
-		488FCEF224E81132003DEA31 /* EmployeesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCEF124E81132003DEA31 /* EmployeesTests.swift */; };
+		488FCEF224E81132003DEA31 /* EmployeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCEF124E81132003DEA31 /* EmployeeTests.swift */; };
 		488FCF0724E81932003DEA31 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF0624E81932003DEA31 /* APIRouter.swift */; };
 		488FCF0824E81932003DEA31 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF0624E81932003DEA31 /* APIRouter.swift */; };
 		488FCF0B24E81983003DEA31 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF0A24E81983003DEA31 /* BaseURL.swift */; };
@@ -29,6 +29,12 @@
 		488FCF1F24E8226C003DEA31 /* EmployeesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF1E24E8226C003DEA31 /* EmployeesService.swift */; };
 		488FCF2024E8226C003DEA31 /* EmployeesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF1E24E8226C003DEA31 /* EmployeesService.swift */; };
 		488FCF2124E84768003DEA31 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF0D24E81990003DEA31 /* APIConstants.swift */; };
+		488FCF2324E852F7003DEA31 /* Employees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF2224E852F7003DEA31 /* Employees.swift */; };
+		488FCF2424E852F7003DEA31 /* Employees.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF2224E852F7003DEA31 /* Employees.swift */; };
+		488FCF2624E852FE003DEA31 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF2524E852FE003DEA31 /* Employee.swift */; };
+		488FCF2724E852FE003DEA31 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF2524E852FE003DEA31 /* Employee.swift */; };
+		488FCF2A24E859A1003DEA31 /* Employee.json in Resources */ = {isa = PBXBuildFile; fileRef = 488FCF2924E859A1003DEA31 /* Employee.json */; };
+		488FCF2B24E859A1003DEA31 /* Employee.json in Resources */ = {isa = PBXBuildFile; fileRef = 488FCF2924E859A1003DEA31 /* Employee.json */; };
 		C3187B07F7897B8FF6C94710 /* Pods_Employees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C77F75176E78B5FFA85A0E /* Pods_Employees.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +59,7 @@
 		488FCEE624E81131003DEA31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		488FCEE824E81131003DEA31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		488FCEED24E81132003DEA31 /* EmployeesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmployeesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		488FCEF124E81132003DEA31 /* EmployeesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesTests.swift; sourceTree = "<group>"; };
+		488FCEF124E81132003DEA31 /* EmployeeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTests.swift; sourceTree = "<group>"; };
 		488FCEF324E81132003DEA31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		488FCF0624E81932003DEA31 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		488FCF0A24E81983003DEA31 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
@@ -63,6 +69,9 @@
 		488FCF1724E81D2E003DEA31 /* EmployeesRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesRouterTests.swift; sourceTree = "<group>"; };
 		488FCF1A24E81E48003DEA31 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
 		488FCF1E24E8226C003DEA31 /* EmployeesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesService.swift; sourceTree = "<group>"; };
+		488FCF2224E852F7003DEA31 /* Employees.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employees.swift; sourceTree = "<group>"; };
+		488FCF2524E852FE003DEA31 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		488FCF2924E859A1003DEA31 /* Employee.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Employee.json; sourceTree = "<group>"; };
 		B7ABAF7A04111EF230802856 /* Pods-Employees.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employees.release.xcconfig"; path = "Target Support Files/Pods-Employees/Pods-Employees.release.xcconfig"; sourceTree = "<group>"; };
 		B94C32E52099017C0F3B379F /* Pods-EmployeesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeesTests.release.xcconfig"; path = "Target Support Files/Pods-EmployeesTests/Pods-EmployeesTests.release.xcconfig"; sourceTree = "<group>"; };
 		BA4C4ECFBCF8DA1C18E821AD /* Pods_EmployeesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,7 +136,8 @@
 		488FCEF024E81132003DEA31 /* EmployeesTests */ = {
 			isa = PBXGroup;
 			children = (
-				488FCEF124E81132003DEA31 /* EmployeesTests.swift */,
+				488FCF2824E85986003DEA31 /* Resources */,
+				488FCEF124E81132003DEA31 /* EmployeeTests.swift */,
 				488FCEF324E81132003DEA31 /* Info.plist */,
 				488FCF1724E81D2E003DEA31 /* EmployeesRouterTests.swift */,
 			);
@@ -215,6 +225,8 @@
 		488FCF0524E81510003DEA31 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				488FCF2224E852F7003DEA31 /* Employees.swift */,
+				488FCF2524E852FE003DEA31 /* Employee.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -243,6 +255,14 @@
 				488FCF1E24E8226C003DEA31 /* EmployeesService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		488FCF2824E85986003DEA31 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				488FCF2924E859A1003DEA31 /* Employee.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		70318FE48120E2717042B0B9 /* Frameworks */ = {
@@ -350,6 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				488FCF2A24E859A1003DEA31 /* Employee.json in Resources */,
 				488FCEE724E81131003DEA31 /* LaunchScreen.storyboard in Resources */,
 				488FCEE424E81131003DEA31 /* Assets.xcassets in Resources */,
 				488FCEE224E8112F003DEA31 /* Main.storyboard in Resources */,
@@ -360,6 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				488FCF2B24E859A1003DEA31 /* Employee.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,10 +476,12 @@
 				488FCF1F24E8226C003DEA31 /* EmployeesService.swift in Sources */,
 				488FCF1524E81B26003DEA31 /* EmployeesRouter.swift in Sources */,
 				488FCEDF24E8112F003DEA31 /* ViewController.swift in Sources */,
+				488FCF2624E852FE003DEA31 /* Employee.swift in Sources */,
 				488FCF0724E81932003DEA31 /* APIRouter.swift in Sources */,
 				488FCF1B24E81E48003DEA31 /* RequestService.swift in Sources */,
 				488FCF0E24E81990003DEA31 /* APIConstants.swift in Sources */,
 				488FCF0B24E81983003DEA31 /* BaseURL.swift in Sources */,
+				488FCF2324E852F7003DEA31 /* Employees.swift in Sources */,
 				488FCEDB24E8112F003DEA31 /* AppDelegate.swift in Sources */,
 				488FCEDD24E8112F003DEA31 /* SceneDelegate.swift in Sources */,
 			);
@@ -468,12 +492,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				488FCF1224E81A5E003DEA31 /* TestAPIConstants.swift in Sources */,
-				488FCEF224E81132003DEA31 /* EmployeesTests.swift in Sources */,
+				488FCEF224E81132003DEA31 /* EmployeeTests.swift in Sources */,
 				488FCF1824E81D2E003DEA31 /* EmployeesRouterTests.swift in Sources */,
+				488FCF2724E852FE003DEA31 /* Employee.swift in Sources */,
 				488FCF0824E81932003DEA31 /* APIRouter.swift in Sources */,
 				488FCF1624E81B26003DEA31 /* EmployeesRouter.swift in Sources */,
 				488FCF2124E84768003DEA31 /* APIConstants.swift in Sources */,
 				488FCF2024E8226C003DEA31 /* EmployeesService.swift in Sources */,
+				488FCF2424E852F7003DEA31 /* Employees.swift in Sources */,
 				488FCF1C24E81E48003DEA31 /* RequestService.swift in Sources */,
 				488FCF0C24E81983003DEA31 /* BaseURL.swift in Sources */,
 			);

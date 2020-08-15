@@ -9,7 +9,7 @@
 import Alamofire
 
 protocol EmployeesServiceProtocol {
-    func getEmployees(completion: @escaping (Result<Data?, Error>) -> Void)
+    func getEmployees(completion: @escaping (Result<Employees?, Error>) -> Void)
 }
 
 class EmployeesService: RequestService {
@@ -24,7 +24,7 @@ class EmployeesService: RequestService {
 // MARK: - BeaconServiceProtocol implementation
 extension EmployeesService: EmployeesServiceProtocol {
 
-    func getEmployees(completion: @escaping (Result<Data?, Error>) -> Void) {
-        self.performRequest(route: EmployeesRouter.getEmployees, completion: completion)
+    func getEmployees(completion: @escaping (Result<Employees?, Error>) -> Void) {
+        self.performCodableRequest(route: EmployeesRouter.getEmployees, completion: completion)
     }
 }
