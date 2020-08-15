@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,20 @@
 		488FCEE424E81131003DEA31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488FCEE324E81131003DEA31 /* Assets.xcassets */; };
 		488FCEE724E81131003DEA31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488FCEE524E81131003DEA31 /* LaunchScreen.storyboard */; };
 		488FCEF224E81132003DEA31 /* EmployeesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCEF124E81132003DEA31 /* EmployeesTests.swift */; };
+		488FCF0724E81932003DEA31 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF0624E81932003DEA31 /* APIRouter.swift */; };
+		488FCF0824E81932003DEA31 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF0624E81932003DEA31 /* APIRouter.swift */; };
+		488FCF0B24E81983003DEA31 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF0A24E81983003DEA31 /* BaseURL.swift */; };
+		488FCF0C24E81983003DEA31 /* BaseURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF0A24E81983003DEA31 /* BaseURL.swift */; };
+		488FCF0E24E81990003DEA31 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF0D24E81990003DEA31 /* APIConstants.swift */; };
+		488FCF1224E81A5E003DEA31 /* TestAPIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF1024E81A5E003DEA31 /* TestAPIConstants.swift */; };
+		488FCF1524E81B26003DEA31 /* EmployeesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF1424E81B26003DEA31 /* EmployeesRouter.swift */; };
+		488FCF1624E81B26003DEA31 /* EmployeesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF1424E81B26003DEA31 /* EmployeesRouter.swift */; };
+		488FCF1824E81D2E003DEA31 /* EmployeesRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF1724E81D2E003DEA31 /* EmployeesRouterTests.swift */; };
+		488FCF1B24E81E48003DEA31 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF1A24E81E48003DEA31 /* RequestService.swift */; };
+		488FCF1C24E81E48003DEA31 /* RequestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF1A24E81E48003DEA31 /* RequestService.swift */; };
+		488FCF1F24E8226C003DEA31 /* EmployeesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF1E24E8226C003DEA31 /* EmployeesService.swift */; };
+		488FCF2024E8226C003DEA31 /* EmployeesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF1E24E8226C003DEA31 /* EmployeesService.swift */; };
+		488FCF2124E84768003DEA31 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCF0D24E81990003DEA31 /* APIConstants.swift */; };
 		C3187B07F7897B8FF6C94710 /* Pods_Employees.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10C77F75176E78B5FFA85A0E /* Pods_Employees.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +55,14 @@
 		488FCEED24E81132003DEA31 /* EmployeesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmployeesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		488FCEF124E81132003DEA31 /* EmployeesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesTests.swift; sourceTree = "<group>"; };
 		488FCEF324E81132003DEA31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		488FCF0624E81932003DEA31 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		488FCF0A24E81983003DEA31 /* BaseURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseURL.swift; sourceTree = "<group>"; };
+		488FCF0D24E81990003DEA31 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		488FCF1024E81A5E003DEA31 /* TestAPIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAPIConstants.swift; sourceTree = "<group>"; };
+		488FCF1424E81B26003DEA31 /* EmployeesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesRouter.swift; sourceTree = "<group>"; };
+		488FCF1724E81D2E003DEA31 /* EmployeesRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesRouterTests.swift; sourceTree = "<group>"; };
+		488FCF1A24E81E48003DEA31 /* RequestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestService.swift; sourceTree = "<group>"; };
+		488FCF1E24E8226C003DEA31 /* EmployeesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesService.swift; sourceTree = "<group>"; };
 		B7ABAF7A04111EF230802856 /* Pods-Employees.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employees.release.xcconfig"; path = "Target Support Files/Pods-Employees/Pods-Employees.release.xcconfig"; sourceTree = "<group>"; };
 		B94C32E52099017C0F3B379F /* Pods-EmployeesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmployeesTests.release.xcconfig"; path = "Target Support Files/Pods-EmployeesTests/Pods-EmployeesTests.release.xcconfig"; sourceTree = "<group>"; };
 		BA4C4ECFBCF8DA1C18E821AD /* Pods_EmployeesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmployeesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +129,7 @@
 			children = (
 				488FCEF124E81132003DEA31 /* EmployeesTests.swift */,
 				488FCEF324E81132003DEA31 /* Info.plist */,
+				488FCF1724E81D2E003DEA31 /* EmployeesRouterTests.swift */,
 			);
 			path = EmployeesTests;
 			sourceTree = "<group>";
@@ -126,6 +149,7 @@
 		488FCEFD24E8144D003DEA31 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				488FCF1D24E82260003DEA31 /* Services */,
 				488FCF0524E81510003DEA31 /* Models */,
 				488FCF0424E814F3003DEA31 /* Networking */,
 			);
@@ -180,6 +204,10 @@
 		488FCF0424E814F3003DEA31 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				488FCF1A24E81E48003DEA31 /* RequestService.swift */,
+				488FCF0624E81932003DEA31 /* APIRouter.swift */,
+				488FCF1324E81B06003DEA31 /* Routers */,
+				488FCF0924E8195E003DEA31 /* Constants */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -189,6 +217,32 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		488FCF0924E8195E003DEA31 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				488FCF0A24E81983003DEA31 /* BaseURL.swift */,
+				488FCF0D24E81990003DEA31 /* APIConstants.swift */,
+				488FCF1024E81A5E003DEA31 /* TestAPIConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		488FCF1324E81B06003DEA31 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				488FCF1424E81B26003DEA31 /* EmployeesRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		488FCF1D24E82260003DEA31 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				488FCF1E24E8226C003DEA31 /* EmployeesService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		70318FE48120E2717042B0B9 /* Frameworks */ = {
@@ -241,6 +295,7 @@
 				488FCEE924E81132003DEA31 /* Sources */,
 				488FCEEA24E81132003DEA31 /* Frameworks */,
 				488FCEEB24E81132003DEA31 /* Resources */,
+				0AB27F240BE8662E6B02BA6A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -311,6 +366,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0AB27F240BE8662E6B02BA6A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EmployeesTests/Pods-EmployeesTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EmployeesTests/Pods-EmployeesTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EmployeesTests/Pods-EmployeesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6958BFCEF444A2ED0782801A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -379,7 +451,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				488FCF1F24E8226C003DEA31 /* EmployeesService.swift in Sources */,
+				488FCF1524E81B26003DEA31 /* EmployeesRouter.swift in Sources */,
 				488FCEDF24E8112F003DEA31 /* ViewController.swift in Sources */,
+				488FCF0724E81932003DEA31 /* APIRouter.swift in Sources */,
+				488FCF1B24E81E48003DEA31 /* RequestService.swift in Sources */,
+				488FCF0E24E81990003DEA31 /* APIConstants.swift in Sources */,
+				488FCF0B24E81983003DEA31 /* BaseURL.swift in Sources */,
 				488FCEDB24E8112F003DEA31 /* AppDelegate.swift in Sources */,
 				488FCEDD24E8112F003DEA31 /* SceneDelegate.swift in Sources */,
 			);
@@ -389,7 +467,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				488FCF1224E81A5E003DEA31 /* TestAPIConstants.swift in Sources */,
 				488FCEF224E81132003DEA31 /* EmployeesTests.swift in Sources */,
+				488FCF1824E81D2E003DEA31 /* EmployeesRouterTests.swift in Sources */,
+				488FCF0824E81932003DEA31 /* APIRouter.swift in Sources */,
+				488FCF1624E81B26003DEA31 /* EmployeesRouter.swift in Sources */,
+				488FCF2124E84768003DEA31 /* APIConstants.swift in Sources */,
+				488FCF2024E8226C003DEA31 /* EmployeesService.swift in Sources */,
+				488FCF1C24E81E48003DEA31 /* RequestService.swift in Sources */,
+				488FCF0C24E81983003DEA31 /* BaseURL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,7 +559,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -527,7 +613,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -543,7 +629,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LR33ML54D9;
+				DEVELOPMENT_TEAM = Z97F83GR8X;
 				INFOPLIST_FILE = Employees/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -562,7 +648,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LR33ML54D9;
+				DEVELOPMENT_TEAM = Z97F83GR8X;
 				INFOPLIST_FILE = Employees/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -581,10 +667,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LR33ML54D9;
+				DEVELOPMENT_TEAM = Z97F83GR8X;
 				INFOPLIST_FILE = EmployeesTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -604,10 +691,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LR33ML54D9;
+				DEVELOPMENT_TEAM = Z97F83GR8X;
 				INFOPLIST_FILE = EmployeesTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
