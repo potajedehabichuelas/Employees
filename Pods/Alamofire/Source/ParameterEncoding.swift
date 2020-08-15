@@ -29,14 +29,14 @@ public typealias Parameters = [String: Any]
 
 /// A type used to define how a set of parameters are applied to a `URLRequest`.
 public protocol ParameterEncoding {
-    /// Creates a `URLRequest` by encoding parameters and applying them on the passed request.
+    /// Creates a URL request by encoding parameters and applying them onto an existing request.
     ///
-    /// - Parameters:
-    ///   - urlRequest: `URLRequestConvertible` value onto which parameters will be encoded.
-    ///   - parameters: `Parameters` to encode onto the request.
+    /// - parameter urlRequest: The request to have parameters applied.
+    /// - parameter parameters: The parameters to apply.
     ///
-    /// - Returns:      The encoded `URLRequest`.
-    /// - Throws:       Any `Error` produced during parameter encoding.
+    /// - throws: An `AFError.parameterEncodingFailed` error if encoding fails.
+    ///
+    /// - returns: The encoded request.
     func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest
 }
 
@@ -57,34 +57,35 @@ public protocol ParameterEncoding {
 /// `BoolEncoding` can be used to configure how boolean values are encoded. The default behavior is to encode
 /// `true` as 1 and `false` as 0.
 public struct URLEncoding: ParameterEncoding {
+
     // MARK: Helper Types
 
     /// Defines whether the url-encoded query string is applied to the existing query string or HTTP body of the
     /// resulting URL request.
+    ///
+    /// - methodDependent: Applies encoded query string result to existing query string for `GET`, `HEAD` and `DELETE`
+    ///                    requests and sets as the HTTP body for requests with any other HTTP method.
+    /// - queryString:     Sets or appends encoded query string result to existing query string.
+    /// - httpBody:        Sets encoded query string result as the HTTP body of the URL request.
     public enum Destination {
-        /// Applies encoded query string result to existing query string for `GET`, `HEAD` and `DELETE` requests and
-        /// sets as the HTTP body for requests with any other HTTP method.
-        case methodDependent
-        /// Sets or appends encoded query string result to existing query string.
-        case queryString
-        /// Sets encoded query string result as the HTTP body of the URL request.
-        case httpBody
+        case methodDependent, queryString, httpBody
 
         func encodesParametersInURL(for method: HTTPMethod) -> Bool {
             switch self {
             case .methodDependent: return [.get, .head, .delete].contains(method)
-            case .queryString: return true
-            case .httpBody: return false
+            case .queryString:     return true
+            case .httpBody:        return false
             }
         }
     }
 
     /// Configures how `Array` parameters are encoded.
+    ///
+    /// - brackets:        An empty set of square brackets is appended to the key for every value.
+    ///                    This is the default behavior.
+    /// - noBrackets:      No brackets are appended. The key is encoded as is.
     public enum ArrayEncoding {
-        /// An empty set of square brackets is appended to the key for every value. This is the default behavior.
-        case brackets
-        /// No brackets are appended. The key is encoded as is.
-        case noBrackets
+        case brackets, noBrackets
 
         func encode(key: String) -> String {
             switch self {
@@ -97,11 +98,11 @@ public struct URLEncoding: ParameterEncoding {
     }
 
     /// Configures how `Bool` parameters are encoded.
+    ///
+    /// - numeric:         Encode `true` as `1` and `false` as `0`. This is the default behavior.
+    /// - literal:         Encode `true` and `false` as string literals.
     public enum BoolEncoding {
-        /// Encode `true` as `1` and `false` as `0`. This is the default behavior.
-        case numeric
-        /// Encode `true` and `false` as string literals.
-        case literal
+        case numeric, literal
 
         func encode(value: Bool) -> String {
             switch self {
@@ -116,13 +117,13 @@ public struct URLEncoding: ParameterEncoding {
     // MARK: Properties
 
     /// Returns a default `URLEncoding` instance with a `.methodDependent` destination.
-    public static var `default`: URLEncoding { URLEncoding() }
+    public static var `default`: URLEncoding { return URLEncoding() }
 
     /// Returns a `URLEncoding` instance with a `.queryString` destination.
-    public static var queryString: URLEncoding { URLEncoding(destination: .queryString) }
+    public static var queryString: URLEncoding { return URLEncoding(destination: .queryString) }
 
     /// Returns a `URLEncoding` instance with an `.httpBody` destination.
-    public static var httpBody: URLEncoding { URLEncoding(destination: .httpBody) }
+    public static var httpBody: URLEncoding { return URLEncoding(destination: .httpBody) }
 
     /// The destination defining where the encoded query string is to be applied to the URL request.
     public let destination: Destination
@@ -135,16 +136,14 @@ public struct URLEncoding: ParameterEncoding {
 
     // MARK: Initialization
 
-    /// Creates an instance using the specified parameters.
+    /// Creates a `URLEncoding` instance using the specified destination.
     ///
-    /// - Parameters:
-    ///   - destination:   `Destination` defining where the encoded query string will be applied. `.methodDependent` by
-    ///                    default.
-    ///   - arrayEncoding: `ArrayEncoding` to use. `.brackets` by default.
-    ///   - boolEncoding:  `BoolEncoding` to use. `.numeric` by default.
-    public init(destination: Destination = .methodDependent,
-                arrayEncoding: ArrayEncoding = .brackets,
-                boolEncoding: BoolEncoding = .numeric) {
+    /// - parameter destination: The destination defining where the encoded query string is to be applied.
+    /// - parameter arrayEncoding: The encoding to use for `Array` parameters.
+    /// - parameter boolEncoding: The encoding to use for `Bool` parameters.
+    ///
+    /// - returns: The new `URLEncoding` instance.
+    public init(destination: Destination = .methodDependent, arrayEncoding: ArrayEncoding = .brackets, boolEncoding: BoolEncoding = .numeric) {
         self.destination = destination
         self.arrayEncoding = arrayEncoding
         self.boolEncoding = boolEncoding
@@ -152,6 +151,14 @@ public struct URLEncoding: ParameterEncoding {
 
     // MARK: Encoding
 
+    /// Creates a URL request by encoding parameters and applying them onto an existing request.
+    ///
+    /// - parameter urlRequest: The request to have parameters applied.
+    /// - parameter parameters: The parameters to apply.
+    ///
+    /// - throws: An `Error` if the encoding process encounters an error.
+    ///
+    /// - returns: The encoded request.
     public func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
         var urlRequest = try urlRequest.asURLRequest()
 
@@ -178,45 +185,45 @@ public struct URLEncoding: ParameterEncoding {
         return urlRequest
     }
 
-    /// Creates a percent-escaped, URL encoded query string components from the given key-value pair recursively.
+    /// Creates percent-escaped, URL encoded query string components from the given key-value pair using recursion.
     ///
-    /// - Parameters:
-    ///   - key:   Key of the query component.
-    ///   - value: Value of the query component.
+    /// - parameter key:   The key of the query component.
+    /// - parameter value: The value of the query component.
     ///
-    /// - Returns: The percent-escaped, URL encoded query string components.
+    /// - returns: The percent-escaped, URL encoded query string components.
     public func queryComponents(fromKey key: String, value: Any) -> [(String, String)] {
         var components: [(String, String)] = []
-        switch value {
-        case let dictionary as [String: Any]:
+
+        if let dictionary = value as? [String: Any] {
             for (nestedKey, value) in dictionary {
                 components += queryComponents(fromKey: "\(key)[\(nestedKey)]", value: value)
             }
-        case let array as [Any]:
+        } else if let array = value as? [Any] {
             for value in array {
                 components += queryComponents(fromKey: arrayEncoding.encode(key: key), value: value)
             }
-        case let number as NSNumber:
-            if number.isBool {
-                components.append((escape(key), escape(boolEncoding.encode(value: number.boolValue))))
+        } else if let value = value as? NSNumber {
+            if value.isBool {
+                components.append((escape(key), escape(boolEncoding.encode(value: value.boolValue))))
             } else {
-                components.append((escape(key), escape("\(number)")))
+                components.append((escape(key), escape("\(value)")))
             }
-        case let bool as Bool:
+        } else if let bool = value as? Bool {
             components.append((escape(key), escape(boolEncoding.encode(value: bool))))
-        default:
+        } else {
             components.append((escape(key), escape("\(value)")))
         }
+
         return components
     }
 
-    /// Creates a percent-escaped string following RFC 3986 for a query string key or value.
+    /// Returns a percent-escaped string following RFC 3986 for a query string key or value.
     ///
-    /// - Parameter string: `String` to be percent-escaped.
+    /// - parameter string: The string to be percent-escaped.
     ///
-    /// - Returns:          The percent-escaped `String`.
+    /// - returns: The percent-escaped string.
     public func escape(_ string: String) -> String {
-        string.addingPercentEncoding(withAllowedCharacters: .afURLQueryAllowed) ?? string
+        return string.addingPercentEncoding(withAllowedCharacters: .afURLQueryAllowed) ?? string
     }
 
     private func query(_ parameters: [String: Any]) -> String {
@@ -235,28 +242,39 @@ public struct URLEncoding: ParameterEncoding {
 /// Uses `JSONSerialization` to create a JSON representation of the parameters object, which is set as the body of the
 /// request. The `Content-Type` HTTP header field of an encoded request is set to `application/json`.
 public struct JSONEncoding: ParameterEncoding {
+
     // MARK: Properties
 
     /// Returns a `JSONEncoding` instance with default writing options.
-    public static var `default`: JSONEncoding { JSONEncoding() }
+    public static var `default`: JSONEncoding { return JSONEncoding() }
 
     /// Returns a `JSONEncoding` instance with `.prettyPrinted` writing options.
-    public static var prettyPrinted: JSONEncoding { JSONEncoding(options: .prettyPrinted) }
+    public static var prettyPrinted: JSONEncoding { return JSONEncoding(options: .prettyPrinted) }
 
     /// The options for writing the parameters as JSON data.
     public let options: JSONSerialization.WritingOptions
 
     // MARK: Initialization
 
-    /// Creates an instance using the specified `WritingOptions`.
+    /// Creates a `JSONEncoding` instance using the specified options.
     ///
-    /// - Parameter options: `JSONSerialization.WritingOptions` to use.
+    /// - parameter options: The options for writing the parameters as JSON data.
+    ///
+    /// - returns: The new `JSONEncoding` instance.
     public init(options: JSONSerialization.WritingOptions = []) {
         self.options = options
     }
 
     // MARK: Encoding
 
+    /// Creates a URL request by encoding parameters and applying them onto an existing request.
+    ///
+    /// - parameter urlRequest: The request to have parameters applied.
+    /// - parameter parameters: The parameters to apply.
+    ///
+    /// - throws: An `Error` if the encoding process encounters an error.
+    ///
+    /// - returns: The encoded request.
     public func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
         var urlRequest = try urlRequest.asURLRequest()
 
@@ -277,14 +295,14 @@ public struct JSONEncoding: ParameterEncoding {
         return urlRequest
     }
 
-    /// Encodes any JSON compatible object into a `URLRequest`.
+    /// Creates a URL request by encoding the JSON object and setting the resulting data on the HTTP body.
     ///
-    /// - Parameters:
-    ///   - urlRequest: `URLRequestConvertible` value into which the object will be encoded.
-    ///   - jsonObject: `Any` value (must be JSON compatible` to be encoded into the `URLRequest`. `nil` by default.
+    /// - parameter urlRequest: The request to apply the JSON object to.
+    /// - parameter jsonObject: The JSON object to apply to the request.
     ///
-    /// - Returns:      The encoded `URLRequest`.
-    /// - Throws:       Any `Error` produced during encoding.
+    /// - throws: An `Error` if the encoding process encounters an error.
+    ///
+    /// - returns: The encoded request.
     public func encode(_ urlRequest: URLRequestConvertible, withJSONObject jsonObject: Any? = nil) throws -> URLRequest {
         var urlRequest = try urlRequest.asURLRequest()
 
@@ -309,9 +327,5 @@ public struct JSONEncoding: ParameterEncoding {
 // MARK: -
 
 extension NSNumber {
-    fileprivate var isBool: Bool {
-        // Use Obj-C type encoding to check whether the underlying type is a `Bool`, as it's guaranteed as part of
-        // swift-corelibs-foundation, per [this discussion on the Swift forums](https://forums.swift.org/t/alamofire-on-linux-possible-but-not-release-ready/34553/22).
-        String(cString: objCType) == "c"
-    }
+    fileprivate var isBool: Bool { return CFBooleanGetTypeID() == CFGetTypeID(self) }
 }
