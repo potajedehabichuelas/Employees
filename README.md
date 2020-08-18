@@ -31,7 +31,7 @@ I've added a bunch of wrappers and extensions that I've developed overtime to ma
 (A service in charge of network operations would be created and injected in the viewModel to request data)
 
 - UINotificationBanner wraps and customizes selected messages library (SwiftUI)
-- Same with UIActivityHUD which probably needs updating since the underlying library (SVProgressHUD) seems to have some issues lately that hasn't been fixed
+- Same with UIActivityHUD which probably needs updating since the underlying library (SVProgressHUD) seems to have some issues lately that hasn't been fixed (HUD does not seem to be centered anymore, and it required some modification to even run :/)
 - AppStoryboard & StoryboardIdentifiable avoids hardcoding names and simplifies & cleans up ViewController instantation
     ViewModelBased also allows VC instantiation with his viewModel dependency
 
