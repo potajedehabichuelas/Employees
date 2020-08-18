@@ -27,6 +27,7 @@ enum EmployeeType: String, Codable {
 
 //Protocol that hides the underlying Employee Model
 protocol EmployeeProtocol {
+    //Here we could hide some of the properties of the model if they shouldn't be read
     var uuid : String  { get }
     var fullName : String  { get }
     var emailAddress: String  { get }
@@ -41,7 +42,7 @@ protocol EmployeeProtocol {
 }
 
 // MARK: - Employee
-struct Employee: Codable {
+struct Employee: Codable, EmployeeProtocol {
     let uuid : String
     let fullName : String
     let emailAddress: String

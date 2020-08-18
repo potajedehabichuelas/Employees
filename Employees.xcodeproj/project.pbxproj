@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2C12FCC34832F960F5187FA3 /* Pods_EmployeesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4C4ECFBCF8DA1C18E821AD /* Pods_EmployeesTests.framework */; };
+		481723F824EBF4CE008E6F33 /* EmployeesModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481723F724EBF4CE008E6F33 /* EmployeesModelController.swift */; };
+		481723F924EBF4CE008E6F33 /* EmployeesModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481723F724EBF4CE008E6F33 /* EmployeesModelController.swift */; };
+		481723FB24EBF521008E6F33 /* ArrayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481723FA24EBF521008E6F33 /* ArrayViewModel.swift */; };
+		481723FC24EBF521008E6F33 /* ArrayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481723FA24EBF521008E6F33 /* ArrayViewModel.swift */; };
 		488FCEDB24E8112F003DEA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCEDA24E8112F003DEA31 /* AppDelegate.swift */; };
 		488FCEDD24E8112F003DEA31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCEDC24E8112F003DEA31 /* SceneDelegate.swift */; };
-		488FCEDF24E8112F003DEA31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCEDE24E8112F003DEA31 /* ViewController.swift */; };
 		488FCEE224E8112F003DEA31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488FCEE024E8112F003DEA31 /* Main.storyboard */; };
 		488FCEE424E81131003DEA31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 488FCEE324E81131003DEA31 /* Assets.xcassets */; };
 		488FCEE724E81131003DEA31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488FCEE524E81131003DEA31 /* LaunchScreen.storyboard */; };
@@ -50,10 +53,11 @@
 
 /* Begin PBXFileReference section */
 		10C77F75176E78B5FFA85A0E /* Pods_Employees.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Employees.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		481723F724EBF4CE008E6F33 /* EmployeesModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesModelController.swift; sourceTree = "<group>"; };
+		481723FA24EBF521008E6F33 /* ArrayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayViewModel.swift; sourceTree = "<group>"; };
 		488FCED724E8112F003DEA31 /* Employees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Employees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		488FCEDA24E8112F003DEA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		488FCEDC24E8112F003DEA31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		488FCEDE24E8112F003DEA31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		488FCEE124E8112F003DEA31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		488FCEE324E81131003DEA31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		488FCEE624E81131003DEA31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -125,7 +129,6 @@
 				488FCEFE24E81460003DEA31 /* Support */,
 				488FCEFD24E8144D003DEA31 /* Main */,
 				488FCEFC24E8142E003DEA31 /* Presentation */,
-				488FCEDE24E8112F003DEA31 /* ViewController.swift */,
 				488FCEE024E8112F003DEA31 /* Main.storyboard */,
 				488FCEE324E81131003DEA31 /* Assets.xcassets */,
 				488FCEE524E81131003DEA31 /* LaunchScreen.storyboard */,
@@ -179,6 +182,7 @@
 		488FCEFF24E814AF003DEA31 /* ModelController */ = {
 			isa = PBXGroup;
 			children = (
+				481723F724EBF4CE008E6F33 /* EmployeesModelController.swift */,
 			);
 			path = ModelController;
 			sourceTree = "<group>";
@@ -193,6 +197,7 @@
 		488FCF0124E814CB003DEA31 /* Utilities + Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				481723FA24EBF521008E6F33 /* ArrayViewModel.swift */,
 			);
 			path = "Utilities + Protocol";
 			sourceTree = "<group>";
@@ -475,12 +480,13 @@
 			files = (
 				488FCF1F24E8226C003DEA31 /* EmployeesService.swift in Sources */,
 				488FCF1524E81B26003DEA31 /* EmployeesRouter.swift in Sources */,
-				488FCEDF24E8112F003DEA31 /* ViewController.swift in Sources */,
 				488FCF2624E852FE003DEA31 /* Employee.swift in Sources */,
 				488FCF0724E81932003DEA31 /* APIRouter.swift in Sources */,
+				481723F824EBF4CE008E6F33 /* EmployeesModelController.swift in Sources */,
 				488FCF1B24E81E48003DEA31 /* RequestService.swift in Sources */,
 				488FCF0E24E81990003DEA31 /* APIConstants.swift in Sources */,
 				488FCF0B24E81983003DEA31 /* BaseURL.swift in Sources */,
+				481723FB24EBF521008E6F33 /* ArrayViewModel.swift in Sources */,
 				488FCF2324E852F7003DEA31 /* Employees.swift in Sources */,
 				488FCEDB24E8112F003DEA31 /* AppDelegate.swift in Sources */,
 				488FCEDD24E8112F003DEA31 /* SceneDelegate.swift in Sources */,
@@ -496,9 +502,11 @@
 				488FCF1824E81D2E003DEA31 /* EmployeesRouterTests.swift in Sources */,
 				488FCF2724E852FE003DEA31 /* Employee.swift in Sources */,
 				488FCF0824E81932003DEA31 /* APIRouter.swift in Sources */,
+				481723F924EBF4CE008E6F33 /* EmployeesModelController.swift in Sources */,
 				488FCF1624E81B26003DEA31 /* EmployeesRouter.swift in Sources */,
 				488FCF2124E84768003DEA31 /* APIConstants.swift in Sources */,
 				488FCF2024E8226C003DEA31 /* EmployeesService.swift in Sources */,
+				481723FC24EBF521008E6F33 /* ArrayViewModel.swift in Sources */,
 				488FCF2424E852F7003DEA31 /* Employees.swift in Sources */,
 				488FCF1C24E81E48003DEA31 /* RequestService.swift in Sources */,
 				488FCF0C24E81983003DEA31 /* BaseURL.swift in Sources */,
