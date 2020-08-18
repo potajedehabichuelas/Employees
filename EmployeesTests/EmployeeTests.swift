@@ -32,8 +32,8 @@ class EmployeeTests: XCTestCase {
          let thumb = "https://s3.amazonaws.com/sq-mobile-interview/photos/5095a907-abc9-4734-8d1e-0eeb2506bfa8/small.jpg"
          let photo =  "https://s3.amazonaws.com/sq-mobile-interview/photos/5095a907-abc9-4734-8d1e-0eeb2506bfa8/large.jpg"
 
-         let team = "Public Web & Marketing"
-         let empType = "PART_TIME"
+        let team = "Public Web & Marketing"
+        let empType: EmployeeType = .partTime
 
         let fileUrl = Bundle.main.url(forResource: "Employee", withExtension: "json")
         do {

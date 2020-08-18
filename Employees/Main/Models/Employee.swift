@@ -8,13 +8,31 @@
 
 import Foundation
 
+enum EmployeeType: String, Codable {
+    case fullTime = "FULL_TIME"
+    case partTime = "PART_TIME"
+    case contractor = "CONTRACTOR"
+
+    func UIString() -> String {
+        switch self {
+        case .fullTime:
+            return "Full Time"
+        case .partTime:
+            return "Part Time"
+        case .contractor:
+            return "Contractor"
+        }
+    }
+}
+
 // MARK: - Employee
 struct Employee: Codable {
     let uuid : String
     let fullName : String
     let emailAddress: String
     let team: String
-    let employeeType: String
+
+    let employeeType: EmployeeType
 
     let biography: String?
     let photoURLSmall: String?
