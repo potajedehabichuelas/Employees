@@ -29,15 +29,18 @@ class EmployeesTableViewController: UITableViewController {
             }
         })
     }
+}
 
-    // MARK: - Table view data source & Delegate
+extension EmployeesTableViewController {
+
+    // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EmployeeTableViewCell.self), for: indexPath) as? EmployeeTableViewCell
             else { return UITableViewCell() }
 
         let employee = self.viewModel.employeeAt(index: indexPath.row)
-        cell.setup(name: employee.fullName, thumbnail: "", team: employee.team)
+        cell.setup(name: employee.fullName, thumbnail: employee.photoURLSmall, team: employee.team)
         return cell
     }
 
@@ -49,3 +52,14 @@ class EmployeesTableViewController: UITableViewController {
         return self.viewModel.count()
     }
 }
+
+extension EmployeesTableViewController {
+
+    // MARK: - Table view Delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Change the selected background view of the cell.
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+

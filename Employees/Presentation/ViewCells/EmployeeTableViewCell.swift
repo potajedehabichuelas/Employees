@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class EmployeeTableViewCell: UITableViewCell {
 
@@ -22,8 +23,13 @@ class EmployeeTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    func setup(name: String, thumbnail: String, team: String) {
+    func setup(name: String, thumbnail: String?, team: String) {
         self.name.text = name
         self.team.text = team
+        //Reset img to avoid issues due to recycling
+        self.imageView?.image = nil
+        if let img = thumbnail, let imgUrl = URL(string: img) {
+            self.thumbnail?.kf.setImage(with: imgUrl)
+        }
     }
 }
