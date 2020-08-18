@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="RvI-Su-BfP" userLabel="Card View" customClass="MessageView" customModule="SwiftMessages">
+            <rect key="frame" x="0.0" y="0.0" width="510" height="160"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cET-M9-9qa" userLabel="Corner rounding view">
+                    <rect key="frame" x="20" y="44" width="470" height="82"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FW6-Dy-WuH">
+                            <rect key="frame" x="0.0" y="0.0" width="470" height="82"/>
+                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="15"/>
+                            <state key="normal" title="MESSAGE">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.87058823529411766" green="0.32549019607843138" blue="0.47843137254901957" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="FW6-Dy-WuH" secondAttribute="trailing" id="3bH-JQ-YMv"/>
+                        <constraint firstItem="FW6-Dy-WuH" firstAttribute="leading" secondItem="cET-M9-9qa" secondAttribute="leading" id="DD6-0V-AXy"/>
+                        <constraint firstAttribute="bottom" secondItem="FW6-Dy-WuH" secondAttribute="bottom" id="Jav-Mz-cRG"/>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" priority="900" constant="500" id="iZl-dJ-W9H"/>
+                        <constraint firstItem="FW6-Dy-WuH" firstAttribute="top" secondItem="cET-M9-9qa" secondAttribute="top" id="ken-8u-iCd"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="iZl-dJ-W9H"/>
+                        </mask>
+                    </variation>
+                    <variation key="widthClass=regular">
+                        <mask key="constraints">
+                            <include reference="iZl-dJ-W9H"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.87058823529411766" green="0.32549019607843138" blue="0.47843137254901957" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="cET-M9-9qa" firstAttribute="top" secondItem="RvI-Su-BfP" secondAttribute="topMargin" id="8hm-wX-rfM"/>
+                <constraint firstAttribute="bottomMargin" secondItem="cET-M9-9qa" secondAttribute="bottom" id="CPY-mL-DgQ"/>
+                <constraint firstAttribute="trailingMargin" secondItem="cET-M9-9qa" secondAttribute="trailing" priority="900" id="D5f-cR-CWx"/>
+                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="cET-M9-9qa" secondAttribute="trailing" priority="900" id="KWh-nS-KKx"/>
+                <constraint firstItem="cET-M9-9qa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RvI-Su-BfP" secondAttribute="leadingMargin" priority="900" id="Sy2-1Q-FQ7"/>
+                <constraint firstItem="cET-M9-9qa" firstAttribute="leading" secondItem="RvI-Su-BfP" secondAttribute="leadingMargin" priority="900" id="dmY-1s-N0y"/>
+                <constraint firstItem="cET-M9-9qa" firstAttribute="centerX" secondItem="RvI-Su-BfP" secondAttribute="centerX" priority="950" id="pl6-m4-FZg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="zZH-3M-lc0"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="bounceAnimationOffset">
+                    <real key="value" value="0.0"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="topLayoutMarginAddition">
+                    <real key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="leftLayoutMarginAddition">
+                    <real key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="bottomLayoutMarginAddition">
+                    <real key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="rightLayoutMarginAddition">
+                    <real key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="collapseLayoutMarginAdditions" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Sy2-1Q-FQ7"/>
+                    <exclude reference="KWh-nS-KKx"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=regular">
+                <mask key="constraints">
+                    <include reference="Sy2-1Q-FQ7"/>
+                    <exclude reference="D5f-cR-CWx"/>
+                    <exclude reference="dmY-1s-N0y"/>
+                    <include reference="KWh-nS-KKx"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="backgroundView" destination="cET-M9-9qa" id="h8c-sg-4Vq"/>
+                <outlet property="button" destination="FW6-Dy-WuH" id="h99-1C-l5D"/>
+            </connections>
+            <point key="canvasLocation" x="510.35156249999994" y="386.96925329428984"/>
+        </view>
+    </objects>
+</document>

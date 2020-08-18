@@ -12,4 +12,4 @@ extension UIViewController: StoryboardIdentifiable {}
 
 extension UIViewController: UIActivityHUD {}
 
-//extension UIViewController: AlertMessage {}
+extension UIViewController: UINotificationBanner {}

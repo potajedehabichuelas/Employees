@@ -21,6 +21,8 @@
 		4817240724EBFB68008E6F33 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817240524EBFB68008E6F33 /* UIViewController+Extensions.swift */; };
 		4817240924EBFC7C008E6F33 /* UIActivityHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817240824EBFC7C008E6F33 /* UIActivityHUD.swift */; };
 		4817240B24EBFD34008E6F33 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817240A24EBFD34008E6F33 /* EmployeeTableViewCell.swift */; };
+		4817240D24EC0E85008E6F33 /* UINotificationBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817240C24EC0E85008E6F33 /* UINotificationBanner.swift */; };
+		4817241324EC1205008E6F33 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4817241224EC1205008E6F33 /* CardView.xib */; };
 		488FCEDB24E8112F003DEA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCEDA24E8112F003DEA31 /* AppDelegate.swift */; };
 		488FCEDD24E8112F003DEA31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCEDC24E8112F003DEA31 /* SceneDelegate.swift */; };
 		488FCEE224E8112F003DEA31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488FCEE024E8112F003DEA31 /* Main.storyboard */; };
@@ -70,6 +72,8 @@
 		4817240524EBFB68008E6F33 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		4817240824EBFC7C008E6F33 /* UIActivityHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIActivityHUD.swift; sourceTree = "<group>"; };
 		4817240A24EBFD34008E6F33 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		4817240C24EC0E85008E6F33 /* UINotificationBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINotificationBanner.swift; sourceTree = "<group>"; };
+		4817241224EC1205008E6F33 /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		488FCED724E8112F003DEA31 /* Employees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Employees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		488FCEDA24E8112F003DEA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		488FCEDC24E8112F003DEA31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +122,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4817241024EC10E1008E6F33 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				488FCEE524E81131003DEA31 /* LaunchScreen.storyboard */,
+				488FCEE024E8112F003DEA31 /* Main.storyboard */,
+				4817241124EC10EC008E6F33 /* xibs */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		4817241124EC10EC008E6F33 /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				4817241224EC1205008E6F33 /* CardView.xib */,
+			);
+			path = xibs;
+			sourceTree = "<group>";
+		};
 		488FCECE24E8112F003DEA31 = {
 			isa = PBXGroup;
 			children = (
@@ -141,12 +163,11 @@
 		488FCED924E8112F003DEA31 /* Employees */ = {
 			isa = PBXGroup;
 			children = (
+				4817241024EC10E1008E6F33 /* UI */,
 				488FCEFE24E81460003DEA31 /* Support */,
 				488FCEFD24E8144D003DEA31 /* Main */,
 				488FCEFC24E8142E003DEA31 /* Presentation */,
-				488FCEE024E8112F003DEA31 /* Main.storyboard */,
 				488FCEE324E81131003DEA31 /* Assets.xcassets */,
-				488FCEE524E81131003DEA31 /* LaunchScreen.storyboard */,
 			);
 			path = Employees;
 			sourceTree = "<group>";
@@ -166,7 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				488FCF0324E814E2003DEA31 /* Extensions */,
-				488FCF0224E814D3003DEA31 /* ViewCells */,
+				488FCF0224E814D3003DEA31 /* Views */,
 				488FCF0124E814CB003DEA31 /* Utilities + Protocol */,
 				488FCF0024E814C1003DEA31 /* ViewController */,
 				488FCEFF24E814AF003DEA31 /* ModelController */,
@@ -218,16 +239,17 @@
 				4817240224EBFADE008E6F33 /* StoryboardIdentifiable.swift */,
 				4817240524EBFB68008E6F33 /* UIViewController+Extensions.swift */,
 				4817240824EBFC7C008E6F33 /* UIActivityHUD.swift */,
+				4817240C24EC0E85008E6F33 /* UINotificationBanner.swift */,
 			);
 			path = "Utilities + Protocol";
 			sourceTree = "<group>";
 		};
-		488FCF0224E814D3003DEA31 /* ViewCells */ = {
+		488FCF0224E814D3003DEA31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				4817240A24EBFD34008E6F33 /* EmployeeTableViewCell.swift */,
 			);
-			path = ViewCells;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		488FCF0324E814E2003DEA31 /* Extensions */ = {
@@ -398,6 +420,7 @@
 			files = (
 				488FCF2A24E859A1003DEA31 /* Employee.json in Resources */,
 				488FCEE724E81131003DEA31 /* LaunchScreen.storyboard in Resources */,
+				4817241324EC1205008E6F33 /* CardView.xib in Resources */,
 				488FCEE424E81131003DEA31 /* Assets.xcassets in Resources */,
 				488FCEE224E8112F003DEA31 /* Main.storyboard in Resources */,
 			);
@@ -511,6 +534,7 @@
 				481723FB24EBF521008E6F33 /* ArrayViewModel.swift in Sources */,
 				488FCF2324E852F7003DEA31 /* Employees.swift in Sources */,
 				488FCEDB24E8112F003DEA31 /* AppDelegate.swift in Sources */,
+				4817240D24EC0E85008E6F33 /* UINotificationBanner.swift in Sources */,
 				488FCEDD24E8112F003DEA31 /* SceneDelegate.swift in Sources */,
 				4817240924EBFC7C008E6F33 /* UIActivityHUD.swift in Sources */,
 				4817240624EBFB68008E6F33 /* UIViewController+Extensions.swift in Sources */,

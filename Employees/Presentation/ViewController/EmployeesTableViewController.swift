@@ -26,6 +26,7 @@ class EmployeesTableViewController: UITableViewController {
                 self.tableView.reloadData()
             } else {
                 //Show UI message depending on the error type
+                self.showBanner(title: "ERROR LOADING EMPLOYEES")
             }
         })
     }
