@@ -11,7 +11,12 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    // Workaround to quickly fix SVProgressHUD, it's not ideal, don't like it and won't do it in another scenario
+    // but I've hacked it to save time for other tasks and demonstration purposes of the assigment
+    lazy var window: UIWindow? = {
+        return UIApplication.shared.windows.first
+    }()
+    //
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
