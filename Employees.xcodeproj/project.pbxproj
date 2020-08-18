@@ -23,6 +23,7 @@
 		4817240B24EBFD34008E6F33 /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817240A24EBFD34008E6F33 /* EmployeeTableViewCell.swift */; };
 		4817240D24EC0E85008E6F33 /* UINotificationBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817240C24EC0E85008E6F33 /* UINotificationBanner.swift */; };
 		4817241324EC1205008E6F33 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4817241224EC1205008E6F33 /* CardView.xib */; };
+		4817241524EC1581008E6F33 /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4817241424EC1581008E6F33 /* AppStoryboard.swift */; };
 		488FCEDB24E8112F003DEA31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCEDA24E8112F003DEA31 /* AppDelegate.swift */; };
 		488FCEDD24E8112F003DEA31 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488FCEDC24E8112F003DEA31 /* SceneDelegate.swift */; };
 		488FCEE224E8112F003DEA31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488FCEE024E8112F003DEA31 /* Main.storyboard */; };
@@ -74,6 +75,7 @@
 		4817240A24EBFD34008E6F33 /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
 		4817240C24EC0E85008E6F33 /* UINotificationBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINotificationBanner.swift; sourceTree = "<group>"; };
 		4817241224EC1205008E6F33 /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		4817241424EC1581008E6F33 /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		488FCED724E8112F003DEA31 /* Employees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Employees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		488FCEDA24E8112F003DEA31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		488FCEDC24E8112F003DEA31 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				4817240524EBFB68008E6F33 /* UIViewController+Extensions.swift */,
 				4817240824EBFC7C008E6F33 /* UIActivityHUD.swift */,
 				4817240C24EC0E85008E6F33 /* UINotificationBanner.swift */,
+				4817241424EC1581008E6F33 /* AppStoryboard.swift */,
 			);
 			path = "Utilities + Protocol";
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4817241524EC1581008E6F33 /* AppStoryboard.swift in Sources */,
 				488FCF1F24E8226C003DEA31 /* EmployeesService.swift in Sources */,
 				488FCF1524E81B26003DEA31 /* EmployeesRouter.swift in Sources */,
 				488FCF2624E852FE003DEA31 /* Employee.swift in Sources */,

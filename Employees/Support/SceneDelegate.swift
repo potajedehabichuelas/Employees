@@ -14,10 +14,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+
+
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+
+        //We're providing a custom start VC here
+        //First we create and inject the dependencies of the VC
+        //Then we instantiate it and load it
+        //Ideally a coordinator or a similar patter would take care of this task (Navigation)
+        //But I didn't want to go over the given time for the assignment so I didn't implement it.
+
+        self.window = UIWindow(windowScene: windowScene)
+        let employeesMC = EmployeesModelController(employeesService: EmployeesService())
+        let employeesTableVc = EmployeesTableViewController.instantiate(from: UIStoryboard(storyboard: .main), viewModel: employeesMC)
+
+        let rootNavC = UINavigationController(rootViewController: employeesTableVc)
+        self.window?.rootViewController = rootNavC
+        self.window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

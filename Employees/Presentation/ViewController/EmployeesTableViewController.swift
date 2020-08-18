@@ -8,11 +8,10 @@
 
 import UIKit
 
-class EmployeesTableViewController: UITableViewController {
+class EmployeesTableViewController: UITableViewController, ViewModelBased {
 
     typealias ViewModel = EmployeesModelControllerProtocol
-    //var viewModel: EmployeesModelControllerProtocol!
-    var viewModel: EmployeesModelControllerProtocol = EmployeesModelController(employeesService: EmployeesService())
+    var viewModel: EmployeesModelControllerProtocol!
 
     private struct UIMessages {
         static let genericError = "ERROR LOADING EMPLOYEES"
