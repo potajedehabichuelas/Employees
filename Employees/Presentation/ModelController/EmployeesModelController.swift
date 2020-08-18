@@ -35,7 +35,8 @@ extension EmployeesModelController: EmployeesModelControllerProtocol {
                             completion(false)
                             return
                         }
-                        self.viewModel = employees.employees
+                        //Sort employees by name
+                        self.viewModel = employees.employees.sorted(by: { $0.fullName < $1.fullName })
                         completion(true)
                      case .failure(let error):
                          print(error.localizedDescription)
