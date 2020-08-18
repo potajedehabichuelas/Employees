@@ -8,17 +8,6 @@
 
 import Alamofire
 
-enum HTTPHeaderField: String {
-    case authentication = "Authorization"
-    case contentType = "Content-Type"
-    case acceptType = "Accept"
-    case acceptEncoding = "Accept-Encoding"
-}
-
-enum ContentType: String {
-    case json = "application/json"
-}
-
 protocol APIRouter: URLRequestConvertible {
     var method: HTTPMethod { get }
     var path: String { get }
@@ -33,10 +22,6 @@ extension APIRouter {
         var urlRequest = URLRequest(url: url.appendingPathComponent(self.path))
         // HTTP Method
         urlRequest.httpMethod = method.rawValue
-//        //Settings
-//        urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.acceptType.rawValue)
-//        urlRequest.setValue(ContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
-
         // Parameters
         if let parameters = parameters {
             do {
