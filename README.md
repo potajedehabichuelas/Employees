@@ -16,7 +16,7 @@ Mostly the app  (MVVM) and network (Routers) architechture since there was only 
 ## Personal Code
 I've added a bunch of wrappers and extensions that I've developed overtime to make things simpler and cleaner:
 
--APIRouter & RequestService, to obtain generic simpler requests that also wrap the networking dependency used. 
+- APIRouter & RequestService, to obtain generic simpler requests that also wrap the networking dependency used. 
 (A service in charge of network operations would be created and injected in the viewModel to request data)
 
 - UINotificationBanner wraps and customizes selected messages library (SwiftUI)
