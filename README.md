@@ -23,6 +23,7 @@ I've added a bunch of wrappers and extensions that I've developed overtime to ma
 - Same with UIActivityHUD which probably needs updating since the underlying library (SVProgressHUD) seems to have some issues lately that hasn't been fixed
 - AppStoryboard & StoryboardIdentifiable avoids hardcoding names and simplifies & cleans up ViewController instantation
     ViewModelBased also allows VC instantiation with his viewModel dependency
+
 example: 
 ```
         EmployeesTableViewController.instantiate(from: UIStoryboard(storyboard: .main), viewModel: employeesMC)
