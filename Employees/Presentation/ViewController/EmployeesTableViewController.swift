@@ -14,6 +14,11 @@ class EmployeesTableViewController: UITableViewController {
     //var viewModel: EmployeesModelControllerProtocol!
     var viewModel: EmployeesModelControllerProtocol = EmployeesModelController(employeesService: EmployeesService())
 
+    private struct UIMessages {
+        static let genericError = "ERROR LOADING EMPLOYEES"
+        static let noEmployess = "THERE ARE NO EMPLOYEES"
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,10 +28,14 @@ class EmployeesTableViewController: UITableViewController {
         self.viewModel.getEmployees(completion: { success in
             self.hideHUD()
             if success {
-                self.tableView.reloadData()
+                if self.viewModel.count() > 0 {
+                    self.tableView.reloadData()
+                } else {
+                    self.showBanner(title: UIMessages.noEmployess)
+                }
             } else {
                 //Show UI message depending on the error type
-                self.showBanner(title: "ERROR LOADING EMPLOYEES")
+                self.showBanner(title: UIMessages.genericError)
             }
         })
     }
