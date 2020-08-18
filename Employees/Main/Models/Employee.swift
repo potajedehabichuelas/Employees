@@ -25,6 +25,21 @@ enum EmployeeType: String, Codable {
     }
 }
 
+//Protocol that hides the underlying Employee Model
+protocol EmployeeProtocol {
+    var uuid : String  { get }
+    var fullName : String  { get }
+    var emailAddress: String  { get }
+    var team: String  { get }
+
+    var employeeType: EmployeeType { get }
+
+    var biography: String?  { get }
+    var photoURLSmall: String? { get }
+    var photoURLLarge: String? { get }
+    var phoneNumber : String? { get }
+}
+
 // MARK: - Employee
 struct Employee: Codable {
     let uuid : String
