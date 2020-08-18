@@ -7,6 +7,7 @@ target 'Employees' do
   pod 'Alamofire', '5.0.0-beta.5'
   pod 'SwiftMessages', '~> 8.0.0'
   pod 'SVProgressHUD', '~> 2.2.5'
+  pod 'Kingfisher', '~> 5.0'
 
   target 'EmployeesTests' do
     inherit! :search_paths

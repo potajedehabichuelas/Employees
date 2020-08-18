@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (5.0.0-beta.5)
+  - Kingfisher (5.15.0):
+    - Kingfisher/Core (= 5.15.0)
+  - Kingfisher/Core (5.15.0)
   - SVProgressHUD (2.2.5)
   - SwiftMessages (8.0.0):
     - SwiftMessages/App (= 8.0.0)
@@ -7,20 +10,23 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 5.0.0-beta.5)
+  - Kingfisher (~> 5.0)
   - SVProgressHUD (~> 2.2.5)
   - SwiftMessages (~> 8.0.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Kingfisher
     - SVProgressHUD
     - SwiftMessages
 
 SPEC CHECKSUMS:
   Alamofire: 9afb08f7f43efcc71c072374e720fcf67521317d
+  Kingfisher: 1acb67597a520c2d0310677e66d6e0af455ef757
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftMessages: 29e7975b1173fd4e8357600c6518b5a59bc607d6
 
-PODFILE CHECKSUM: 737755899de6ce498c86f3add36f51c7937fee63
+PODFILE CHECKSUM: d9415edcac58559493e4c1bf68594bac05cdb23b
 
 COCOAPODS: 1.9.3
