@@ -13,9 +13,15 @@ class EmployeesTableViewController: UITableViewController, ViewModelBased {
     typealias ViewModel = EmployeesModelControllerProtocol
     var viewModel: EmployeesModelControllerProtocol!
 
+    var selectedIndex: Int = -1
+
     private struct UIMessages {
         static let genericError = "ERROR LOADING EMPLOYEES"
         static let noEmployess = "THERE ARE NO EMPLOYEES"
+    }
+
+    private struct Segues {
+        static let detailsSegue = "employeeDetailsSegue"
     }
 
     override func viewDidLoad() {
@@ -69,6 +75,19 @@ extension EmployeesTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Change the selected background view of the cell.
         tableView.deselectRow(at: indexPath, animated: true)
+        self.selectedIndex = indexPath.row
+        self.performSegue(withIdentifier: Segues.detailsSegue, sender: self)
     }
 }
 
+extension EmployeesTableViewController {
+
+    // MARK: - Navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.detailsSegue, let detailsVc = segue.destination as? EmployeeDetailsViewController {
+            guard self.selectedIndex >= 0 else { return }
+            detailsVc.employee = self.viewModel.employeeAt(index: self.selectedIndex)
+        }
+    }
+}
